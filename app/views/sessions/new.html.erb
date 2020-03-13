@@ -1,0 +1,19 @@
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+
+    <p>
+    <%= label_tag(:name, "Your name: ") %>
+      <input name="name" type="text" id="name">
+
+    </p>
+        <%= label_tag(:password, "Password: ") %> <br>
+
+  <input name="password" type="password" id="password"> <br>
+          <label for="password_confirmation">Password Confirmation:</label> <br>
+
+    <input name="password_confirmation" type="password" id="password_confirmation">
+
+  <br>
+
+  <input type="submit" value='Sign Up'>
+
+<% end %>
