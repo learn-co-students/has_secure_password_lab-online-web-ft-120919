@@ -17,11 +17,13 @@ class UsersController < ApplicationController
     def create
         user = User.create(user_params)
         session[:user_id] = user.id
-        if user.password != user.password_confirmation
+        if user.password == user.password_confirmation
+            # binding.pry
             redirect_to user_path(user)
         else
             redirect_to new_user_path
         end
+    end
         # @user = User.create(user_params)
         # if @user.password != @user.password_confirmation
         #     session[:user_id] = @user.id
@@ -45,7 +47,7 @@ class UsersController < ApplicationController
         #     redirect_to '/'
         # end
         
-    end
+    
      
     private
     
